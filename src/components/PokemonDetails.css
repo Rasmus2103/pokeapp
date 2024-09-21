@@ -1,0 +1,50 @@
+/* PokemonDetails.css */
+.pokemon-details-container {
+    text-align: center;
+    padding: 20px;
+    max-width: 400px;
+    margin: 0 auto;
+    background-color: #f8f9fa;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .pokemon-details-container h1 {
+    font-size: 2.5rem;
+    color: #333;
+    text-transform: capitalize; /* Ensure Pokémon name is capitalized */
+  }
+  
+  .pokemon-details-container img {
+    margin-top: 20px;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    border: 2px solid #ddd;
+    background-color: #fff;
+    padding: 10px;
+  }
+  
+  .pokemon-details-container .details {
+    margin-top: 20px;
+    font-size: 1.2rem;
+    color: #555;
+  }
+  
+  .error-message {
+    color: red;
+    font-size: 1.5rem;
+    text-align: center;
+  }
+  
+  .loading-message {
+    font-size: 1.5rem;
+    text-align: center;
+    color: #007bff;
+  }
+  
+  .no-data-message {
+    font-size: 1.5rem;
+    text-align: center;
+    color: #333;
+  }  

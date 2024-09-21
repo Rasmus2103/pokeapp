@@ -1,0 +1,77 @@
+/* PokemonList.css */
+.pokemon-list-container {
+    padding: 20px;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  
+  .pokemon-list-container h1 {
+    text-align: center;
+    color: #FFCB05;
+    font-size: 2.5rem;
+  }
+  
+  .pokemon-list-container ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .pokemon-list-container ul li {
+    margin: 10px 0;
+    font-size: 1.2rem;
+    text-align: center;
+    padding: 8px;
+    background-color: #f8f9fa;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    transition: transform 0.2s;
+  }
+  
+  .pokemon-list-container ul li:hover {
+    transform: scale(1.05);
+    background-color: #fff;
+    cursor: pointer;
+  }
+  
+  .pagination-controls {
+    display: flex;
+    justify-content: space-between;
+    margin: 20px 0;
+  }
+  
+  .pagination-controls button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+  }
+  
+  .pagination-controls button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+  }
+  
+  .pagination-controls button:hover:not(:disabled) {
+    background-color: #0056b3;
+  }
+  
+  .pagination-info {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 1.2rem;
+    color: #333;
+  }
+  
+  .limit-dropdown {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+  }
+  
+  .limit-dropdown label {
+    margin-right: 10px;
+    font-size: 1.2rem;
+  }  
