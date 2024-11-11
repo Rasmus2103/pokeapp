@@ -1,0 +1,56 @@
+/* TypeDetails.css */
+
+/* General container for the TypeDetails */
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    text-align: center;
+  }
+  
+  /* Styling for the h1 header */
+  .container h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #333;
+  }
+  
+  /* Styling for the Pokémon list */
+  .pokemon-list {
+    list-style-type: none;
+    padding: 0;
+    text-align: left;
+    margin-top: 20px;
+  }
+  
+  .pokemon-list li {
+    margin: 10px 0;
+    padding: 10px;
+    background-color: #e0f7fa;
+    border-radius: 8px;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+    font-size: 1.2rem;
+    text-transform: capitalize;
+    transition: background-color 0.3s ease;
+  }
+  
+  /* Hover effect for Pokémon items */
+  .pokemon-list li:hover {
+    background-color: #26c6da;
+    color: white;
+  }
+  
+  /* Loading and error messages */
+  .loading-message, .error-message {
+    font-size: 1.5rem;
+    margin-top: 20px;
+  }
+  
+  .loading-message {
+    color: #007bff;
+  }
+  
+  .error-message {
+    color: #ff0000;
+  }
+  

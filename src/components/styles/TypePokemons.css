@@ -1,0 +1,65 @@
+/* General container for the TypePage */
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    text-align: center;
+  }
+  
+  /* Styling for the h1 header */
+  .container h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #333;
+  }
+  
+  /* Styling for the list of types */
+  .type-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+    padding: 0;
+    list-style-type: none;
+  }
+  
+  /* Styling for each type button */
+  .type-list li {
+    background-color: #f8f9fa;
+    padding: 10px 20px;
+    border-radius: 10px;
+    transition: background-color 0.3s ease-in-out;
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-transform: capitalize;
+    cursor: pointer;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Hover effect for type buttons */
+  .type-list li:hover {
+    background-color: #007bff;
+    color: #fff;
+  }
+  
+  /* Link inside the type list */
+  .type-list a {
+    text-decoration: none;
+    color: inherit;
+    font-weight: bold;
+  }
+  
+  /* Loading and error messages */
+  .loading-message, .error-message {
+    font-size: 1.5rem;
+    margin-top: 20px;
+  }
+  
+  .loading-message {
+    color: #007bff;
+  }
+  
+  .error-message {
+    color: #ff0000;
+  }
+  

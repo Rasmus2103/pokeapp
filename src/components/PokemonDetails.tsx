@@ -1,19 +1,19 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import axios from 'axios';
-import './PokemonDetails.css'; // Assuming your styles are in this file
+import './styles/PokemonDetails.css'; // Assuming your styles are in this file
 
 interface Sprites {
   front_default: string;
 }
 
 interface Stats {
-    base_stat: number;
-    effort: number;
-    stat: {
-        name: string;
-        url: string;
-    };
+  base_stat: number;
+  effort: number;
+  stat: {
+    name: string;
+    url: string;
+  };
 }
 
 interface Ability {
@@ -25,9 +25,18 @@ interface Ability {
   slot: number;
 }
 
+interface Types {
+  slot: number;
+  type: {
+    name: string;
+    url: string;
+  };
+}
+
 interface Pokemon {
   name: string;
   sprites: Sprites;
+  types: Types[];
   abilities: Ability[];
   stats: Stats[];
 }
@@ -38,10 +47,11 @@ const PokemonDetails: React.FC = () => {
   const [loading, setLoading] = useState<boolean>(true);
   const [error, setError] = useState<string | null>(null);
 
+  // Fetch Pokémon details by name
   useEffect(() => {
     const fetchPokemonDetails = async () => {
       try {
-        const response = await axios.get<Pokemon>(`https://localhost:7180/api/pokemon/${name}`);
+        const response = await axios.get<Pokemon>(`https://localhost:7180/api/pokemon/name/${name}`);
         setPokemon(response.data);
         setLoading(false);
       } catch (error) {
@@ -53,6 +63,7 @@ const PokemonDetails: React.FC = () => {
 
     fetchPokemonDetails();
   }, [name]);
+
 
   if (loading) return <div className="loading-message">Loading...</div>;
   if (error) return <div className="error-message">{error}</div>;
@@ -66,6 +77,15 @@ const PokemonDetails: React.FC = () => {
       <img src={pokemon.sprites.front_default} alt={pokemon.name} />
 
       <div className="details">
+        {/* Display Pokémon Types */}
+        <h2>Types</h2>
+        <ul>
+          {pokemon.types.map((type, index) => (
+            <li key={index}>{type.type.name}</li>
+          ))}
+        </ul>
+
+        {/* Display Abilities */}
         <h2>Abilities</h2>
         <ul>
           {pokemon.abilities.map((ability, index) => (
@@ -74,9 +94,11 @@ const PokemonDetails: React.FC = () => {
             </li>
           ))}
         </ul>
+
+        {/* Display Stats */}
         <h2>Stats</h2>
         <ul>
-        <h3>Total Base Stats: {baseStatsTotal}</h3>
+          <h3>Total Base Stats: {baseStatsTotal}</h3>
           {pokemon.stats.map((stat, index) => (
             <li key={index}>
               {stat.stat.name}: {stat.base_stat}
